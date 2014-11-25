@@ -30,7 +30,7 @@ Async.js relies on Javascript promises to let you know when the code in the back
     
 After the code is done running in the background, the worker thread created from the call to `runInBackground` will be closed.
     
-###createPersistantThread###
+###Async.createPersistantThread###
 
 This function allows you to run some code in the background that won't close allowing you to run it multiple times with different parameters. It takes one parameter, the code you want to run in the background.  It returns a function that you can then call to run the code in the background.  When called this function returns a promise similar to how `runInBackground` works.
 
