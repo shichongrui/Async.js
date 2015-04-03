@@ -2,30 +2,30 @@
 <html>
     <head></head>
     <body>
-        <script src="threading.js"></script>
+        <script src="async.min.js"></script>
         <script>
             var promise = Async.runInBackground("I'm passing this in", 383, function(a, b) {
                 console.log(b);
                 return a
             });
-            
+
             promise.then(function(data) {
-                console.log(data); 
+                console.log(data);
             });
-            
+
             var worker = Async.createPersistantThread(function(a, b) {
                 console.log(b);
                 return a;
             });
-            
+
             var promiseOne = worker("Persistant thread", 484);
-            
+
             promiseOne.then(function(data) {
-                console.log(data); 
+                console.log(data);
             });
-            
+
             var promiseTwo = worker("Another message", 292);
-            
+
             promiseTwo.then(function(data) {
                 console.log(data);
             });
